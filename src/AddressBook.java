@@ -36,7 +36,6 @@ public class AddressBook {
         } else {
             for (Entry match : matches) {
                 addressBook.remove(match);
-                System.out.println("Your Entry containing " + email + " has been removed from your Address Book!");
                 break;
             }
         }
