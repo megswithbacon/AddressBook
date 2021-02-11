@@ -1,8 +1,8 @@
 public class Entry {
-    private String firstName;
-    private String lastName;
-    private String phoneNumber;
-    private String email;
+    private final String firstName;
+    private final String lastName;
+    private final String phoneNumber;
+    private final String email;
 
     private Entry(String firstName, String lastName, String phoneNumber, String email) {
         this.firstName = firstName;
@@ -13,10 +13,6 @@ public class Entry {
 
     public static Entry createNewEntry(String firstName, String lastName, String phoneNumber, String email){
         return new Entry(firstName, lastName, phoneNumber, email);
-    }
-
-    public static Entry createBlankEntry(){
-        return new Entry("","", "", "");
     }
 
     @Override
@@ -33,31 +29,15 @@ public class Entry {
         return firstName;
     }
 
-    public void setFirstName(String newFirstName){
-        firstName = newFirstName;
-    }
-
     public String getLastName(){
         return lastName;
-    }
-
-    public void setLastName(String newLastName){
-        lastName = newLastName;
     }
 
     public String getPhoneNumber(){
         return phoneNumber;
     }
 
-    public void setPhoneNumber(String newPhoneNumber){
-        phoneNumber = newPhoneNumber;
-    }
-
     public String getEmail(){
         return email;
-    }
-
-    public void setEmail(String newEmail){
-        email= newEmail;
     }
 }
