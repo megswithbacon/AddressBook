@@ -13,6 +13,7 @@ public class Main {
     private static boolean quitTime = false;
 
 
+    //Take input from user and AddEntry
     private static void addEntry() {
         System.out.println("1) Add Entry -- Please provide the following information: ");
         System.out.println("First Name: ");
@@ -36,6 +37,7 @@ public class Main {
         addEntry = false;
     }
 
+    // Take input from user and remove specified Entry
     private static void removeEntry() {
         System.out.println("Please enter the email address of the entry that you would like to remove: ");
         String entryToDelete = input.nextLine();
@@ -52,6 +54,7 @@ public class Main {
         removeEntry = false;
     }
 
+    // Take input from user and Search For Entry- print to Console for user
     private static void searchForEntry() {
         System.out.println("""
                 Please choose how you would like to Search:\s
@@ -74,11 +77,13 @@ public class Main {
         searchEntry = false;
     }
 
+    // print Address Book to Console for user
     private static void printAddressBook() {
         myBook.printAddressBook();
         printAddressBook = false;
     }
 
+    // Delete AddressBook and ask user if they are sure
     private static void deleteAddressBook() {
         System.out.println("Are you sure that you want to Delete your entire AddressBook?? \n 1) YES, DELETE IT ALL!! \n 2) NO!! PLEASE DO NOT DELETE MY ADDRESS BOOK!");
         String deleteInput = input.nextLine();
@@ -90,6 +95,7 @@ public class Main {
         deleteAddressBook = false;
     }
 
+    // Print initial options in Main Menu to user in Console
     private static void startProgram() {
         System.out.println("""
                 ----------------
@@ -111,6 +117,8 @@ public class Main {
                 Please choose what you'd like to do with the database:""");
     }
 
+    // checks for User input 1-6 and changes booleans to true when options are picked by user-
+    // factored this option in to make this potentially more usable and encapsulated for future projects
     private static void processMainMenuInput(String input) {
         switch (input) {
             case "1" -> addEntry = true;
@@ -123,7 +131,7 @@ public class Main {
         }
     }
 
-
+    // ends program do-while loop by changing quitTime to true
     private static void quitProgram() {
         quitTime = true;
     }

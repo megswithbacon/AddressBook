@@ -1,8 +1,10 @@
 import java.util.ArrayList;
 
 public class AddressBook {
+    // ArrayList of Entries used to store and manipulate AddressBook
     ArrayList<Entry> addressBook = new ArrayList<>();
 
+    // ENUM used for query searches
     public enum SearchType {
         FIRST_NAME,
         LAST_NAME,
@@ -10,6 +12,7 @@ public class AddressBook {
         EMAIL
     }
 
+    // checks for unique email and created new Entry with user input
     public void addEntry(Entry entry) {
         // check for a unique email
         ArrayList<Entry> emailMatches = searchForEmail(entry.getEmail());
@@ -24,6 +27,8 @@ public class AddressBook {
         }
     }
 
+    // Searches for existing email in AddressBook and assignes to new ArrayList
+    // if no matches-- output to user // otherwise, search through existing AddressBook and remove matches in list
     public void removeEntry(String email) {
         ArrayList<Entry> matches = searchForEmail(email);
         if (matches.isEmpty()) {
@@ -37,6 +42,7 @@ public class AddressBook {
         }
     }
 
+    // allows for single FirstName search
     public ArrayList<Entry> searchForFirstName(String searchQuery) {
         ArrayList<Entry> matchList = new ArrayList<>();
         for (Entry entry : addressBook) {
@@ -47,6 +53,7 @@ public class AddressBook {
         return matchList;
     }
 
+    // allows for single LastName search
     public ArrayList<Entry> searchForLastName(String searchQuery) {
         ArrayList<Entry> matchList = new ArrayList<>();
         for (Entry entry : addressBook) {
@@ -57,6 +64,7 @@ public class AddressBook {
         return matchList;
     }
 
+    // allows for single PhoneNumber search
     public ArrayList<Entry> searchForPhoneNumber(String searchQuery) {
         ArrayList<Entry> matchList = new ArrayList<>();
         for (Entry entry : addressBook) {
@@ -67,6 +75,7 @@ public class AddressBook {
         return matchList;
     }
 
+    // allows for single Email search
     public ArrayList<Entry> searchForEmail(String searchQuery) {
         ArrayList<Entry> matchList = new ArrayList<>();
         for (Entry entry : addressBook) {
@@ -76,7 +85,7 @@ public class AddressBook {
         }
         return matchList;
     }
-
+    // search function that will search for userInput by Type (FirstName, LastName, PhoneNumber, Email)
     public ArrayList<Entry> searchForEntry(String searchQuery, SearchType searchType) {
         ArrayList<Entry> matchList = new ArrayList<>();
         switch (searchType) {
@@ -109,12 +118,14 @@ public class AddressBook {
         return matchList;
     }
 
+    // System Out ArrayList of matches after search
     public void printMatches(ArrayList<Entry> matchList) {
         for (Entry entry : matchList) {
             System.out.println(entry.toString());
         }
     }
 
+    // Print Address Book to Console
     public void printAddressBook() {
         if (addressBook.isEmpty()) {
             System.out.println("You have no entries in your Address Book!");
@@ -126,6 +137,7 @@ public class AddressBook {
         }
     }
 
+    // Delete all items in Address Book ArrayList
     public void deleteAddressBook() {
         if (addressBook.isEmpty()) {
             System.out.println("The Address Book is already empty");

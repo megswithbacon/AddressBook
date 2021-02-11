@@ -4,6 +4,7 @@ public class Entry {
     private final String phoneNumber;
     private final String email;
 
+    //Private Entry Constructor
     private Entry(String firstName, String lastName, String phoneNumber, String email) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -11,10 +12,12 @@ public class Entry {
         this.email = email;
     }
 
+    // static factory method to create Entries
     public static Entry createNewEntry(String firstName, String lastName, String phoneNumber, String email){
         return new Entry(firstName, lastName, phoneNumber, email);
     }
 
+    // override of toString() method for Entry
     @Override
     public String toString() {
         return "************************************" + '\n' +
@@ -25,6 +28,7 @@ public class Entry {
                 "************************************" + '\n';
     }
 
+    // getters for all local private Entry variables
     public String getFirstName(){
         return firstName;
     }
