@@ -75,6 +75,7 @@ public class AddressBook {
         }
         return matchList;
     }
+
     public ArrayList<Entry> searchForEntry(String searchQuery, SearchType searchType){
         ArrayList<Entry> matchList = new ArrayList<>();
         switch (searchType) {
